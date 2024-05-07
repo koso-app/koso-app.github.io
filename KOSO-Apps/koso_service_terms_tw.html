@@ -1,0 +1,600 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit; background-repeat: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit; background-repeat: inherit; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit; background-repeat: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
+</style><title>koso_service_terms_tw</title>
+</head>
+<body class='typora-export'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='服務條款'><span>服務條款</span></h1><p><span>感謝您（以下或稱會員）選擇使用「KOSO Connect APP」 APP所提供之各項會員服務。統亞電子科技股份有限公司（以下簡稱「本公司」）依據本服務條款（以下簡稱本條款），提供「KOSO Connect APP」（以下簡稱「本APP」）服務（以下簡稱本服務）。為了保障您的權益，請您務必詳讀本條款。當您註冊會員或以會員帳號實際使用本 APP 時，即表示您已閱讀、了解並同意接受本條款。如果您經過考慮後不同意本條款內容，請您不要進行註冊程序並停止使用本 APP 。</span>
+<span>若您未滿二十歲，或為法令規定未具備完全行為能力之人，請您由家長（或監護人）陪同閱讀本條款，在您的家長（或監護人）詳讀、瞭解並同意後，您才能使用或繼續使用本 APP 。當您使用或繼續使用本 APP 時，即推定您的家長（或監護人）已詳讀、瞭解並同意接受本條款的所有內容及其後修改變更條款內容。</span></p><h2 id='一個人資料的蒐集處理與安全'><span>一、個人資料的蒐集、處理與安全</span></h2><p><span>本APP會保留您所提供的姓名、電子郵件地址、聯絡人名稱、聯絡人電話等資訊，以提供您使用會員註冊、緊急聯絡、服務信箱等完整服務。</span></p><p><span>為了提供確實有效的服務，您必須保證在加入成為本APP會員時所留存的所有資料均為完整、正確、與當時情況相符的資料，如果事後有變更，為了確保您的權利，您應即時修改於本APP留存之會員資料。若您提供任何錯誤或不實的資料，除您必須自行負擔因此造成的損失外，本 APP 有權暫停或終止您的帳號，並拒絕您繼續使用本 APP 。</span></p><p><span>您所填寫個人資料如有重複、冒用他人名義、違反公序良俗、或有侵害他人姓名權、公司名稱、商標或其他智慧財產權之虞、或有造成他人誤解之虞、或涉有其他違反法令之嫌、或破壞本 APP 服務宗旨者，本公司得拒絕您的註冊、或要求您更正為正確、合法、妥適之資料，或取消您的會員資格及相關權利，並且，您應自負一切民事與刑事上之責任。</span></p><p><span>對於您所留存的個人資料，其目的在於提高會員資料真實性，提供更佳的服務與優惠。本公司（包括委託或合作之第三人）蒐集您的個人資料之特定目的包括但不限於：本公司依法定義務所進行個人資料之蒐集、處理及利用，契約、類似契約或其他法律關係事務，消費者、客戶管理與服務，行銷，資（通）訊服務，網路購物及及其他電子商務服務，調查、統計與研究分析，其他公務機關對本公司目的事業之監督管理，其他經營合於本公司營業登記項目或組織章程所訂之業務等。本 APP 遵守中華民國（臺灣）個人資料保護法令相關規定之規範，除了可能涉及違法、侵權、或違反本條款、或為提供本服務而提供給服務之配合廠商、或經本人同意以外，這些資料將只提供本公司於本條款規定範圍內為運用，絕不會任意透露、交換、或租售給其他第三人、單位及團體；如您不同意前揭個人資料之利用，將無法使用本APP或享有本公司或本公司與第三人合作提供之相關權益及優惠。在您同意上述資料蒐集後，仍可向本公司申請取消，惟您可能無法使用本APP一部或全部之功能，且將無法享有本公司或本公司與第三人合作提供之相關權益及優惠。</span></p><p><span>您的個人資料，得透過</span><a href='mailto:info@koso.com' target='_blank' class='url'>info@koso.com</a><span>向本公司要求查詢、閱覽、製給複製本，或請求補充、更正、刪除或停止蒐集、處理與利用，本公司依法得酌收費用。惟倘您要求刪除或停止利用者，可能導致您無法使用本 APP 之全部或一部，本公司將不負責未來繼續提供服務及任何賠償之責任。</span></p><p><span>您提供之個人資料可能於本公司（包括委託或合作之第三人）及本公司關係企業之存續期間及營業區域內被處理、利用或傳輸。</span></p><h2 id='二帳號保管義務'><span>二、帳號保管義務</span></h2><p><span>會員註冊帳號僅限會員本人使用，會員僅得依本條款使用本 APP ，不得非法重製、散布、販賣、公開傳輸或以其他方式提供給其他第三人使用。</span></p><p><span>會員有義務妥善保管註冊帳號、密碼及其他相關資訊，並為此組註冊帳號登入本 APP 後所進行之一切活動、行為負責，包括且不限於衍生之相關費用。</span></p><p><span>若會員發現註冊帳號內個人資料遭他人非法使用或有任何異常使用之情形時，應立即通知本公司，並請您依循適當法律途徑保護個人權益；必要時，本公司會請會員提供相關個人資料，並有權管理該爭議帳戶之使用權限。</span></p><p><span>如因會員保管疏忽或同意由第三人使用其帳號，導致會員帳號、密碼遭他人非法使用，造成本公司或其他會員權益損害時，您須自行負責相關法律及損害賠償責任。</span></p><h2 id='三行動定位服務'><span>三、行動定位服務</span></h2><p><span>本公司及合作廠商可能會收集、使用、傳送、處理、儲存及分享您使用本服務之終端設備的確切位置資料，藉以提供您行動定位相關服務。前述終端設備的位置資訊可能包括終端設備的識別碼與名稱、類型及（或）即時之地理位置。本公司會以無法識別您個人身分的匿名方式分享此項位置資料，供本公司及合作廠商用於提供及提升行動定位服務。當您選擇使用應用程式供應商的行動定位服務時，本公司可能會與該供應商分享地理位置資料。</span></p><p><span>凡使用行動定位服務或功能或依賴行動定位資訊而運作的應用程式，即表示您同意並允許本公司蒐集、處理、使用、儲存您帳號的相關資訊，以及您用以安裝使用本 APP 之裝置，以提供此類行動定位服務或功能讓您使用。如果您在本服務中使用或提供位置資料，必須遵守並檢閱第三方隱私權政策中有關該第三方使用位置資料的條款。本服務所提供之位置資料僅供參考。本公司及其合作夥伴不對本服務所顯示之位置資料或其他任何資料的可用性、準確性、完整性、可靠性或有效性提供保證。</span></p><h2 id='四智慧財產權保護'><span>四、智慧財產權保護</span></h2><p><span>本 APP 內提供的任何資訊，包括但不限於本服務資訊內容、程式碼、文字、美術作品、圖標、圖像及商標，均係本公司或其他智慧財產所有權人所有，受到法律中華民國（臺灣）所保護。在未得到本公司發出的事先書面許可前，您不得以任何方式就任何目的將本 APP 的內容或其任何部份進行重製、拷貝、出售、交易、轉售其內容或作任何商業目的之使用，且不得移除或變更本 APP 及（或）本服務、內容中所包含的任何著作權權利電子管理資訊、防盜拷措施或其它權利（包括且不限於專利權、商標權）或軟體的標記。您亦不得使用任何自動工具或方式（包括但不限於魁儡程式、惡意軟體、爬蟲等方式）收集或破壞本 APP 訊息、資料以及干擾、侵犯本 APP 的正常運作。</span></p><p><span>您可將本 APP 之內容及提供之資訊作非商業性、家居及個人使用，但必須維持所有權利完整無損。</span></p><p><span>本公司僅授權您使用本 APP ，而並非將本 APP 及本 APP 所提供的服務、內容、文字檔及任何編碼的智慧財產權移轉給您。為避免存疑，一切本公司沒有在本條款中明確授予您的權利，均由本公司保留。</span></p><p><span>未經本公司許可，您不可以宣稱本公司及（或）「KOSO Connect APP」是您的合作夥伴，或利用本 APP 的公開或未公開的資訊或程式編碼、文字、美術作品、圖標、圖像及商標進行任何商業行為。</span></p><h2 id='五連結網站及第三方規定'><span>五、連結網站及第三方規定</span></h2><p><span>任何從本服務連結出去之其他網站或您在本服務中使用到之第三人提供之服務，可能各自有其不同的聲明或使用規則或策略，敬請您務必自行謹慎了解後，確認是否瀏覽或使用之。本公司特此聲明，本公司不為上述網站或服務提供任何明示或默示之擔保，包括但限於其正確性、有效性、適用性或未侵權事實等。本公司對其他網站或第三人上所揭露之聲明、使用規則、策略或其他內容等均不負任何責任。</span></p><h2 id='六資訊安全措施'><span>六、資訊安全措施</span></h2><p><span>本公司將定期進行系統更新，並維護本 APP 所蒐集之會員資訊，防止第三人非法入侵、取得、竄改、毀損交易記錄或其個人資料。</span></p><p><span>倘發生會員個人資料外洩之情事，本公司得視具體情況，凍結會員帳戶之使用。</span></p><h2 id='七服務之停止與中斷'><span>七、服務之停止與中斷</span></h2><p><span>您同意在發生下列狀況，包括但不限於下列狀況時，導致發生系統暫停、中斷或無法正常使用之情況，本公司對您或其他第三人之直接或間接之損害均不負任何賠償責任，本公司有權緊急處置，進行部分或全面暫停或終止服務。</span></p><p><span>本 APP 與服務架設之機房電子通信設備進行必要之保養及施工時。</span>
+<span>發生突發性之電子通信設備故障時。</span></p><p><span>本 APP 申請之電子通信服務被停止，無法提供服務時。</span></p><p><span>由於天災等不可抗力之因素或其他不可歸責於本 APP 與本公司，致使服務無法提供服務時。</span></p><p><span>您應自行採取相關防護措施，以避免因本 APP 系統發生中斷或故障等情況，而造成您使用上之不便、資料喪失、錯誤、被竄改或其他任何財產上或非財產上損害等情形。</span></p><h2 id='八免責聲明'><span>八、免責聲明</span></h2><p><span>本公司不保證本 APP 與您的行動裝置完全相容；亦不保證本 APP 沒有錯誤或缺陷。</span>
+<span>在任何情況下，本公司不對下列損失負擔損害賠償責任：包括因使用或無法使用本 APP 而引起的損失，或其它直接、間接、意外、特別或衍生性的損失（包括但不限於純粹經濟上的損害、生意中斷、生意資訊的遺失、和任何其它金錢上的損失）。</span></p><h2 id='九修改會員條款之權利'><span>九、修改會員條款之權利</span></h2><p><span>因應社會環境及法令規定的變遷與科技的進步，本 APP 為保護會員隱私，有權配合當時法令、環境、本公司業務需求等因素隨時修改本條款並儘速公告，不另個別通知會員。所有因您使用本 APP 而與本公司所生的權利義務關係，均以當時最後修訂的會員條款內容為依據。如果您在本條款修改公告後仍繼續使用本 APP ，視為您同意修改後的條款內容。</span></p><h2 id='十準據法與管轄法院'><span>十、準據法與管轄法院</span></h2><p><span>本條款之解釋與適用，以及與本條款有關的爭議，均以中華民國（臺灣）法律為準據法，並以臺灣臺南地方法院為一審管轄法院。</span></p><h2 id='十一企業經營者資訊'><span>十一、企業經營者資訊</span></h2><p><span>本 APP 之擁有者為統亞電子科技股份有限公司。聯絡方式：</span><a href='mailto:info@koso.com' target='_blank' class='url'>info@koso.com</a><span>。</span></p><h2 id='十二條款修訂原則'><span>十二、條款修訂原則</span></h2><p><span>本公司將保留得以隨時增刪修改本條款之權利，任何增刪修飾後之內容，應以本公司的公告時間為即時生效日，如您繼續使用本 APP ，視同您同意本條款之全部修改與內容。</span>
+<span>本服務條款的中、英文本如有歧義，概以中文本為準。</span></p><p><span>版序日期：2020年02月</span></p></div></div>
+</body>
+</html>
